@@ -1,10 +1,18 @@
 [versions]
 agp = "8.2.2"
-kotlin = "1.9.20"
-compose = "1.5.4"
-compose-compiler = "1.5.4"
-compose-material3 = "1.1.2"
-androidx-activityCompose = "1.8.0"
+kotlin = "1.9.22"
+compose = "1.6.1"
+compose-compiler = "1.5.8"
+compose-material3 = "1.2.0"
+androidx-activityCompose = "1.8.2"
+compose-navigation = "2.7.7"
+coil = "2.5.0"
+kotlin-datetime = "0.5.0"
+hilt = "2.50"
+hilt-android = "1.1.0"
+ksp = "1.9.22-1.0.17"
+sqlDelight = "2.0.1"
+ktor = "2.3.7"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -14,6 +22,27 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = 
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation"}
+
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil"}
+
+kotlin-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlin-datetime"}
+
+hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt"}
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt"}
+hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-android" }
+
+sqlDelight-runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sqlDelight"}
+sqlDelight-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
+sqlDelight-native = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight"}
+sqlDelight-coroutine = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor"}
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -21,3 +50,7 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight"}
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin"}

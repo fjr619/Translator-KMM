@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.sqlDelight)
 }
 
 kotlin {
@@ -30,8 +32,24 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx)
+            implementation(libs.sqlDelight.runtime)
+            implementation(libs.sqlDelight.coroutine)
+            implementation(libs.kotlin.datetime)
         }
+
+        androidMain.dependencies {
+            implementation(libs.ktor.client.android)
+            implementation(libs.sqlDelight.android)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+            implementation(libs.sqlDelight.native)
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
